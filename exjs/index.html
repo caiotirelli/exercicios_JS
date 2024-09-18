@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos Combinados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <!-- Botão para abrir o menu lateral -->
+<button id="menuButton">☰ Menu</button>
+
+<!-- Menu Lateral -->
+<div id="sidebar" class="sidebar">
+    <a href="#registerSection">Formulário</a> 
+        <a href="#ticTacToe">Jogo da Velha</a> 
+        <a href="#imageSlider">Slider de Imagens</a>
+    <button id="closeMenuButton">Fechar Menu</button>
+</div>
+
+
+
+
+    <!-- Formulário de Registro -->
+    <section id="registerSection">
+        <h2>Registrar Novo Usuário</h2>
+        <form id="registerForm">
+            <label for="registerName">Nome:</label>
+            <input type="text" id="registerName" required>
+            <label for="registerEmail">E-mail:</label>
+            <input type="email" id="registerEmail" required>
+            <label for="registerPassword">Senha:</label>
+            <input type="password" id="registerPassword" required>
+            <button type="submit">Registrar</button>
+            <p id="registerError" class="error"></p>
+        </form>
+    </section>
+
+    <!-- Formulário de Login -->
+    <section id="loginSection">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="loginEmail">E-mail:</label>
+            <input type="email" id="loginEmail" required>
+            <label for="loginPassword">Senha:</label>
+            <input type="password" id="loginPassword" required>
+            <button type="submit">Login</button>
+            <p id="loginError" class="error"></p>
+        </form>
+    </section>
+
+    <!-- Área de Usuário Ativo -->
+    <section id="userSection">
+        <h2>Usuário Ativo</h2>
+        <p id="activeUser">Nenhum usuário logado.</p>
+        <button id="logoutButton">Logout</button>
+    </section>
+
+    
+    <!-- 2. Jogo da Velha -->
+    <section id="ticTacToe">
+        <h2>Jogo da Velha</h2>
+        <div id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <p id="result"></p>
+    
+        <!-- Controles do jogo (Reset Button) -->
+        <div id="gameControls">
+            <button id="resetButton">Reiniciar Jogo</button>
+        </div>
+    </section>
+    
+
+    <!-- Slider de Imagens -->
+<section id="imageSlider">
+    <h2>Slider de Imagens</h2>
+    <div class="slider">
+        <div class="slide active" style="background-image: url('https://forbes.com.br/wp-content/uploads/2015/12/McLaren-P1-Bahrain-773-crop5184x2670-800x533.jpg');"></div>
+        <div class="slide" style="background-image: url('https://carlomagnum.com.br/wp-content/uploads/2020/03/rendering.jpg');"></div>
+        <div class="slide" style="background-image: url('https://fotos-jornaldocarro-estadao.nyc3.cdn.digitaloceanspaces.com/uploads/2017/07/08174915/4956272.jpg');"></div>
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+    </div>
+</section>
+
+ <!-- Sistema de Comentários -->
+ <section id="commentSection">
+    <h2>Comentários</h2>
+    <textarea id="commentBox" placeholder="Digite seu comentário..."></textarea>
+    <button id="submitButton">Enviar Comentário</button>
+    <div id="commentsList"></div>
+</section>
+
+
+    
+    <!-- 7. To-Do List com Drag and Drop -->
+    <div id="todoContainer">
+        <h3>To-Do List</h3>
+        <ul id="todoItems">
+            <li draggable="true" class="todo-item">Tarefa 1</li>
+            <li draggable="true" class="todo-item">Tarefa 2</li>
+            <li draggable="true" class="todo-item">Tarefa 3</li>
+            <li draggable="true" class="todo-item">Tarefa 4</li>
+        </ul>
+    
+        <!-- Formulário para adicionar novas tarefas -->
+        <input type="text" id="newTaskInput" placeholder="Nova tarefa">
+        <button id="addTaskButton">Adicionar Tarefa</button>
+    </div>  
+
+    <!-- Tabs Dinâmicas -->
+    <div class="tabs">
+        <button class="tab-button active" data-target="#tab1">Tab 1</button>
+        <button class="tab-button" data-target="#tab2">Tab 2</button>
+        <!-- Botão para adicionar nova aba -->
+        <button id="addTabButton">Adicionar Nova Aba</button>
+    </div>
+    
+    <!-- Conteúdo das abas -->
+    <div class="tab-content active" id="tab1">
+        <h3>Conteúdo da Tab 1</h3>
+        <p>Este é o conteúdo da primeira aba.</p>
+    </div>
+    <div class="tab-content" id="tab2">
+        <h3>Conteúdo da Tab 2</h3>
+        <p>Este é o conteúdo da segunda aba.</p>
+    </div>
+    
+    <!-- Formulário para criar ou editar abas -->
+    <div id="tabForm" style="display:none;">
+        <input type="text" id="tabTitleInput" placeholder="Título da Aba">
+        <textarea id="tabContentInput" placeholder="Conteúdo da Aba"></textarea>
+        <button id="saveTabButton">Salvar</button>
+    </div>
+    
+
+<!-- Modal de Login -->
+<button id="modalButton">Abrir Modal de Login</button>
+<div id="loginModal">
+    <button id="modalCloseButton">&times;</button>
+    <h2>Login</h2>
+    <input type="text" placeholder="Usuário" /><br>
+    <input type="password" placeholder="Senha" /><br>
+    <button id="modalSubmitButton">Entrar</button>
+</div>
+<!-- Gráfico Interativo -->
+<section id="grafico-interativo">
+    <h2>Gráfico Interativo</h2>
+    <canvas id="myChart"></canvas>
+    <form id="chartForm">
+        <label for="newValue">Novo Valor:</label>
+        <input type="number" id="newValue" placeholder="Novo Valor" required>
+        
+        <label for="dataIndex">Selecionar Campo:</label>
+        <select id="dataIndex"></select>
+        
+        <button type="submit">Atualizar Valor</button>
+    </form>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+  </body>
+</html>
